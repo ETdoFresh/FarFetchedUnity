@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 5;
     public new Rigidbody2D rigidbody2D;
+    public GameObject explosion;
 
     private void OnValidate()
     {
@@ -18,6 +19,8 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        foreach(var contact in collision.contacts)
+            Instantiate(explosion, contact.point, Quaternion.identity);
         Destroy(gameObject);
     }
 }

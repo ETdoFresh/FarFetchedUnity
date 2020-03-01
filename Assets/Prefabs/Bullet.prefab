@@ -143,3 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   rigidbody2D: {fileID: 2872944302055046505}
+  explosion: {fileID: 3958934100920737873, guid: 8e6e30d8e4c2526419becb977973933a,
+    type: 3}
