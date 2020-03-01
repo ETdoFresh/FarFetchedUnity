@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 224328471}
   - component: {fileID: 224328475}
   - component: {fileID: 224328476}
-  m_Layer: 0
+  - component: {fileID: 224328477}
+  m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +267,7 @@ MonoBehaviour:
   movementVelocity: 10
   jumpForce: 25
   rigidbody2D: {fileID: 224328471}
+  checkGrounded: {fileID: 224328477}
 --- !u!114 &224328476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +280,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43be76c5bf7ae443950982b8f8f9d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &224328477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224328470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91466d93ecae11545bb19a1946d109a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0.75
+  isGrounded: 0
 --- !u!1 &376714650
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +305,7 @@ GameObject:
   - component: {fileID: 376714651}
   - component: {fileID: 376714652}
   - component: {fileID: 376714653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainCharacterHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}

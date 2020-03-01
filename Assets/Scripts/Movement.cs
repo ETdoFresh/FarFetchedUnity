@@ -6,11 +6,13 @@ public class Movement : MonoBehaviour
     public float movementVelocity = 10;
     public float jumpForce = 30;
     public new Rigidbody2D rigidbody2D;
+    public CheckGrounded checkGrounded;
     private bool jump;
 
     private void OnValidate()
     {
         if (!rigidbody2D) rigidbody2D = GetComponent<Rigidbody2D>();
+        if (!checkGrounded) checkGrounded = GetComponent<CheckGrounded>();
     }
 
     private void Update()
@@ -27,9 +29,10 @@ public class Movement : MonoBehaviour
 
         if (jump)
         {
-            input = new Vector2(0, 1);
-            rigidbody2D.AddForce(input * jumpForce, ForceMode2D.Impulse);
             jump = false;
+
+            if (checkGrounded && checkGrounded.isGrounded)
+                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
         }
     }
 }
